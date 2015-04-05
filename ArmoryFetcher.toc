@@ -1,0 +1,5 @@
+## Interface: 11200
+## Title: ArmoryFetcher
+## Notes: ArmoryFetcher for 1.12.1
+## SavedVariables: ArmoryFetcherPlayers
+ArmoryFetcher.xml
