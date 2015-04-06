@@ -18,7 +18,7 @@
 		</Frames>
 	</Frame>-->
 	
-	<Frame name="ArmoryFetcher_Frame" parent="UIParent" toplevel="true" enableMouse="true" hidden="true">
+	<!--<Frame name="ArmoryFetcher_Frame" parent="UIParent" toplevel="true" enableMouse="true" hidden="false">
      <Size>
        <AbsDimension x="200" y="200" />
      </Size>
@@ -38,11 +38,30 @@
        </EdgeSize>
      </Backdrop>
 		<Scripts>
+			<OnUpdate>
+				ArmoryFetcher_OnUpdate();
+			</OnUpdate>
 			<OnLoad>
 				ArmoryFetcher_OnLoad();
 			</OnLoad>
 			<OnEvent>
 				ArmoryFetcher_OnEvent();
+			</OnEvent>
+		</Scripts>
+   </Frame>-->
+
+   
+   
+   <Frame name="ArmoryFetcher_Frame" parent="UIParent" toplevel="true" enableMouse="true" hidden="false">
+		<Scripts>
+			<OnUpdate>
+				ArmoryFetcher_OnUpdate();
+			</OnUpdate>
+			<OnLoad>
+				ArmoryFetcher_OnLoad();
+			</OnLoad>
+			<OnEvent>
+				ArmoryFetcher_OnEvent(this, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
 			</OnEvent>
 		</Scripts>
    </Frame>
