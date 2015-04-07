@@ -1,5 +1,5 @@
 
-DEBUG_LEVEL = 2;--0 Low info --1 Medium info --2 very spammy
+DEBUG_LEVEL = 1;--0 Low info --1 Medium info --2 very spammy
 
 function ArmoryFetcher_OnLoad()
 
@@ -117,6 +117,8 @@ function DumpInspect(unitid)
 		name = UnitName(unitid);
 		level = UnitLevel(unitid);
 		realm = GetCVar("realmName");
+		playerClass, englishClass = UnitClass(unitid);
+		race, raceEn = UnitRace(unitid);
 		if(ArmoryFetcherPlayers[realm] == nil) then
 			realm = GetCVar("realmName");
 			ArmoryFetcherPlayers[realm] = {};
@@ -130,6 +132,8 @@ function DumpInspect(unitid)
 		ArmoryFetcherPlayers[realm][faction][name]["PVP"] = HonorDump(unitid);
 		ArmoryFetcherPlayers[realm][faction][name]["lastscan"] = time();
 		ArmoryFetcherPlayers[realm][faction][name]["level"] = level;
+		ArmoryFetcherPlayers[realm][faction][name]["class"] = playerClass;
+		ArmoryFetcherPlayers[realm][faction][name]["race"] = race;
 		--ArmoryFetcherPlayers[realm][faction][name]["name"] = name;
 		
 		for Id, Type in pairs(ItemSlots) do
