@@ -113,7 +113,6 @@ function DumpInspect(unitid)
 	PlayerFaction = UnitFactionGroup("player");
 	if(faction ~= nil and faction == PlayerFaction and UnitIsPlayer(unitid) ~= nil) then
 		NotifyInspect(unitid);
-		AF_Debug("Recorded Name:"..name.." level: "..level, 2);
 		name = UnitName(unitid);
 		level = UnitLevel(unitid);
 		realm = GetCVar("realmName");
@@ -127,6 +126,7 @@ function DumpInspect(unitid)
 			faction = UnitFactionGroup("player");
 			ArmoryFetcherPlayers[realm][faction] = {};
 		end
+		AF_Debug("Recorded Name:"..name.." level: "..level, 2);
 		ArmoryFetcherPlayers[realm][faction][name] = {};
 		ArmoryFetcherPlayers[realm][faction][name]["Guild"] = GuildDump(unitid);
 		ArmoryFetcherPlayers[realm][faction][name]["PVP"] = HonorDump(unitid);
